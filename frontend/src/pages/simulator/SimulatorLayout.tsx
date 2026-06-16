@@ -8,7 +8,6 @@ import {
   LogOut,
   RefreshCcw,
   Server,
-  Zap,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -184,11 +183,10 @@ export function SimulatorLayout() {
           {!sidebarCollapsed && (
             <>
               <div className="flex items-center gap-2.5">
-                <div className="grid size-8 place-items-center rounded-lg bg-gradient-to-br from-amber-400/20 to-emerald-400/20 ring-1 ring-white/10">
-                  <Zap className="size-4 text-amber-300" />
-                </div>
                 <div>
-                  <p className="text-[0.8rem] font-semibold tracking-tight text-white">MASSAI</p>
+                  <p className="text-base font-bold tracking-tight text-white">
+                    MaaS<span className="text-brand-orange">AI</span>
+                  </p>
                   <p className="text-[0.6rem] uppercase tracking-[0.18em] text-slate-500">Operations</p>
                 </div>
               </div>
@@ -196,13 +194,15 @@ export function SimulatorLayout() {
           )}
           {sidebarCollapsed && (
             <Button
-              className="size-8 bg-gradient-to-br from-amber-400/20 to-emerald-400/20 ring-1 ring-white/10 hover:ring-white/20"
+              className="size-8 bg-brand-orange/15 ring-1 ring-brand-orange/30 hover:ring-brand-orange/50"
               onClick={() => setSidebarCollapsed(false)}
               size="icon"
               title="Expand sidebar"
               variant="ghost"
             >
-              <Zap className="size-4 text-amber-300" />
+              <span className="text-sm font-bold text-white">
+                M<span className="text-brand-orange">A</span>
+              </span>
             </Button>
           )}
           {!sidebarCollapsed && (

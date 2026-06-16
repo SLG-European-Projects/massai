@@ -172,8 +172,8 @@ export function MilestoneCard({
           {/* Right-side actions */}
           <div className="flex flex-wrap items-start justify-end gap-2 shrink-0">
             {evidenceSummary.documents.length > 0 && (
-              <Badge className="border-teal-200 bg-teal-50 text-[0.72rem] font-semibold" variant="outline">
-                <FileText aria-hidden className="size-3 text-teal-500" />
+              <Badge className="border-brand-navy/20 bg-brand-navy/5 text-brand-navy text-[0.72rem] font-semibold" variant="outline">
+                <FileText aria-hidden className="size-3 text-brand-orange" />
                 {evidenceSummary.documents.length} doc{evidenceSummary.documents.length === 1 ? "" : "s"}
               </Badge>
             )}
@@ -282,7 +282,7 @@ export function MilestoneCard({
                           <FileText aria-hidden className="size-3.5 shrink-0 text-stone-400" />
                           {onDocumentSelect ? (
                             <button
-                              className="rounded text-sm text-teal-700 underline underline-offset-2 hover:text-teal-900 focus-visible:outline-2 focus-visible:outline-teal-600"
+                              className="rounded text-sm text-brand-navy underline underline-offset-2 hover:text-brand-orange focus-visible:outline-2 focus-visible:outline-brand-orange"
                               onClick={() => onDocumentSelect(doc)}
                               type="button"
                             >
@@ -290,7 +290,7 @@ export function MilestoneCard({
                             </button>
                           ) : (
                             <a
-                              className="rounded text-sm text-teal-700 underline underline-offset-2 hover:text-teal-900 focus-visible:outline-2 focus-visible:outline-teal-600"
+                              className="rounded text-sm text-brand-navy underline underline-offset-2 hover:text-brand-orange focus-visible:outline-2 focus-visible:outline-brand-orange"
                               href={doc.url}
                               rel="noreferrer"
                               target="_blank"
@@ -300,7 +300,7 @@ export function MilestoneCard({
                           )}
                           <a
                             aria-label={`Open ${doc.name} in a new tab`}
-                            className="rounded p-1 text-stone-400 transition hover:bg-stone-100 hover:text-stone-700 focus-visible:outline-2 focus-visible:outline-teal-600"
+                            className="rounded p-1 text-stone-400 transition hover:bg-stone-100 hover:text-stone-700 focus-visible:outline-2 focus-visible:outline-brand-orange"
                             href={doc.url}
                             rel="noreferrer"
                             target="_blank"

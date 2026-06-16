@@ -2,16 +2,17 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
+@import "@fontsource-variable/outfit";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  font-family: "Avenir Next", "Segoe UI Variable", "Helvetica Neue", sans-serif;
-  color: #172426;
+  font-family: "Outfit Variable", "Segoe UI Variable", "Helvetica Neue", sans-serif;
+  color: #262626;
   background:
-    radial-gradient(circle at top left, rgba(244, 168, 58, 0.24), transparent 26%),
-    radial-gradient(circle at 80% 20%, rgba(15, 118, 110, 0.24), transparent 28%),
-    linear-gradient(160deg, #efe7db 0%, #dce8e3 50%, #f5f1e8 100%);
+    radial-gradient(circle at top left, rgba(231, 140, 58, 0.18), transparent 26%),
+    radial-gradient(circle at 80% 20%, rgba(34, 63, 97, 0.16), transparent 28%),
+    linear-gradient(160deg, #f3f2ee 0%, #ece8dd 50%, #f3f2ee 100%);
   color-scheme: light;
   font-synthesis: none;
   line-height: 1.5;
@@ -19,14 +20,22 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --ink: #172426;
+
+  /* ── MaaSAI brand palette ── */
+  --brand-navy: #223f61;
+  --brand-orange: #e78c3a;
+  --brand-sand: #d8d1be;
+  --brand-bg: #f3f2ee;
+  --brand-ink: #262626;
+
+  --ink: #262626;
   --muted: oklch(0.97 0 0);
   --panel: rgba(255, 252, 246, 0.82);
   --panel-strong: rgba(255, 255, 255, 0.94);
   --border: oklch(0.922 0 0);
   --shadow: 0 24px 60px rgba(23, 36, 38, 0.12);
   --accent: oklch(0.97 0 0);
-  --accent-soft: rgba(15, 118, 110, 0.12);
+  --accent-soft: rgba(34, 63, 97, 0.12);
   --warning: #b45309;
   --warning-soft: rgba(245, 158, 11, 0.18);
   --danger: #b42318;
@@ -110,6 +119,13 @@ code {
 .status-shell {
   display: grid;
   place-items: center;
+}
+
+.status-logo {
+  display: block;
+  width: 168px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .status-card,
@@ -232,12 +248,12 @@ code {
 .nav-link:focus-visible {
   transform: translateX(4px);
   background: rgba(255, 255, 255, 0.78);
-  border-color: rgba(15, 118, 110, 0.16);
+  border-color: rgba(34, 63, 97, 0.16);
 }
 
 .nav-link.active {
-  background: linear-gradient(135deg, rgba(15, 118, 110, 0.18), rgba(23, 36, 38, 0.06));
-  border-color: rgba(15, 118, 110, 0.22);
+  background: linear-gradient(135deg, rgba(34, 63, 97, 0.18), rgba(23, 36, 38, 0.06));
+  border-color: rgba(34, 63, 97, 0.22);
 }
 
 .info-card {
@@ -325,9 +341,9 @@ code {
 }
 
 .primary-button {
-  background: linear-gradient(135deg, #0f766e, #14532d);
+  background: linear-gradient(135deg, #e78c3a, #cf7322);
   color: white;
-  box-shadow: 0 16px 30px rgba(15, 118, 110, 0.25);
+  box-shadow: 0 16px 30px rgba(231, 140, 58, 0.28);
 }
 
 .ghost-button {
@@ -520,7 +536,7 @@ code {
 .contract-tab-link.active {
   transform: translateY(-1px);
   background: rgba(255, 255, 255, 0.86);
-  border-color: rgba(15, 118, 110, 0.18);
+  border-color: rgba(34, 63, 97, 0.18);
 }
 
 .tab-count-badge {
@@ -630,7 +646,7 @@ code {
 .contract-list-card:focus-visible {
   transform: translateY(-2px);
   background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(15, 118, 110, 0.18);
+  border-color: rgba(34, 63, 97, 0.18);
 }
 
 .contract-list-topline,
@@ -764,7 +780,7 @@ code {
 .progress-fill {
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(135deg, #0f766e, #14532d);
+  background: linear-gradient(135deg, #223f61, #e78c3a);
 }
 
 .skeleton-card {
@@ -956,7 +972,7 @@ code {
 }
 
 .metric-card-accent {
-  border-color: rgba(15, 118, 110, 0.18);
+  border-color: rgba(34, 63, 97, 0.18);
 }
 
 .metric-card-danger {
@@ -976,7 +992,7 @@ code {
   width: fit-content;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(15, 118, 110, 0.12);
+  background: rgba(34, 63, 97, 0.12);
   color: var(--accent);
   font-size: 0.75rem;
   font-weight: 800;
@@ -999,7 +1015,7 @@ code {
 .overview-action-card:focus-visible {
   transform: translateY(-2px);
   background: rgba(255, 255, 255, 0.88);
-  border-color: rgba(15, 118, 110, 0.18);
+  border-color: rgba(34, 63, 97, 0.18);
 }
 
 .action-count-badge {
@@ -1041,7 +1057,7 @@ code {
   left: calc(var(--marker-size) / 2);
   width: 2px;
   margin-left: -1px;
-  background: rgba(15, 118, 110, 0.28);
+  background: rgba(34, 63, 97, 0.28);
   z-index: 1;
 }
 
@@ -1210,7 +1226,7 @@ code {
 }
 
 .milestone-doc-badge {
-  background: rgba(15, 118, 110, 0.12);
+  background: rgba(34, 63, 97, 0.12);
   color: var(--accent);
 }
 
@@ -1461,14 +1477,14 @@ code {
 .feed-stat-card:hover,
 .gauge-card:hover,
 .sparkline-card:hover {
-  border-color: rgba(15, 118, 110, 0.18);
-  box-shadow: 0 4px 20px rgba(15, 118, 110, 0.06);
+  border-color: rgba(34, 63, 97, 0.18);
+  box-shadow: 0 4px 20px rgba(34, 63, 97, 0.06);
 }
 
 .feed-stat-card:focus-within,
 .gauge-card:focus-within,
 .sparkline-card:focus-within {
-  outline: 2px solid #0f766e;
+  outline: 2px solid #e78c3a;
   outline-offset: 2px;
 }
 
@@ -1522,7 +1538,7 @@ code {
 .feed-inline-progress-fill {
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(135deg, #0f766e, #059669);
+  background: linear-gradient(135deg, #223f61, #e78c3a);
   transition: width 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1546,8 +1562,8 @@ code {
   align-items: center;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(15, 118, 110, 0.1);
-  color: #0f766e;
+  background: rgba(34, 63, 97, 0.1);
+  color: #223f61;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -1664,10 +1680,10 @@ code {
 }
 
 .phase-pill.active {
-  background: rgba(15, 118, 110, 0.12);
-  color: #0f766e;
-  border-color: rgba(15, 118, 110, 0.2);
-  box-shadow: 0 2px 8px rgba(15, 118, 110, 0.1);
+  background: rgba(34, 63, 97, 0.12);
+  color: #223f61;
+  border-color: rgba(34, 63, 97, 0.2);
+  box-shadow: 0 2px 8px rgba(34, 63, 97, 0.1);
 }
 
 /* ── Data table ── */
@@ -1696,7 +1712,7 @@ code {
 }
 
 .feed-table tbody tr:hover {
-  background: rgba(15, 118, 110, 0.03);
+  background: rgba(34, 63, 97, 0.03);
 }
 
 .feed-table tbody tr:last-child td {
@@ -1757,11 +1773,11 @@ code {
 }
 
 .sparkline-line {
-  stroke: #0f766e;
+  stroke: #223f61;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 1px 2px rgba(15, 118, 110, 0.2));
+  filter: drop-shadow(0 1px 2px rgba(34, 63, 97, 0.2));
 }
 
 .sparkline-area {
@@ -1848,7 +1864,7 @@ code {
 }
 
 .alert-item:focus-within {
-  outline: 2px solid #0f766e;
+  outline: 2px solid #e78c3a;
   outline-offset: 2px;
 }
 
@@ -1971,8 +1987,8 @@ code {
 }
 
 .alert-flag.verified {
-  background: rgba(15, 118, 110, 0.08);
-  color: #0f766e;
+  background: rgba(34, 63, 97, 0.08);
+  color: #223f61;
   font-weight: 600;
 }
 
@@ -2018,8 +2034,8 @@ code {
 .alert-filter-field input:focus,
 .alert-filter-field select:focus {
   outline: none;
-  border-color: #0f766e;
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+  border-color: #e78c3a;
+  box-shadow: 0 0 0 3px rgba(231, 140, 58, 0.18);
 }
 
 .alert-filter-field input:hover,
@@ -2051,7 +2067,7 @@ code {
 }
 
 .alert-item .ghost-button:focus-visible {
-  outline: 2px solid #0f766e;
+  outline: 2px solid #e78c3a;
   outline-offset: 2px;
 }
 
@@ -2180,8 +2196,8 @@ code {
 }
 
 .notification-item.unread {
-  border-color: rgba(15, 118, 110, 0.18);
-  background: rgba(15, 118, 110, 0.08);
+  border-color: rgba(34, 63, 97, 0.18);
+  background: rgba(34, 63, 97, 0.08);
 }
 
 .notification-item.read {
@@ -3444,7 +3460,12 @@ code {
 }
 
 @theme inline {
-  --font-sans: 'Geist Variable', sans-serif;
+  --font-sans: 'Outfit Variable', sans-serif;
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-sand: var(--brand-sand);
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-ink: var(--brand-ink);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -3506,8 +3527,8 @@ code {
   display: flex;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(244, 168, 58, 0.12), transparent 26%),
-    radial-gradient(circle at 80% 20%, rgba(15, 118, 110, 0.12), transparent 28%),
+    radial-gradient(circle at top left, rgba(231, 140, 58, 0.12), transparent 26%),
+    radial-gradient(circle at 80% 20%, rgba(34, 63, 97, 0.12), transparent 28%),
     linear-gradient(160deg, #f5f0e6 0%, #e8ede9 50%, #f2ede4 100%);
 }
 
@@ -3587,7 +3608,7 @@ code {
   width: 3px;
   height: 16px;
   border-radius: 0 3px 3px 0;
-  background: linear-gradient(180deg, rgba(15, 118, 110, 0.8), rgba(244, 168, 58, 0.8));
+  background: linear-gradient(180deg, rgba(34, 63, 97, 0.8), rgba(231, 140, 58, 0.8));
 }
 
 /* ── Dashboard Components ── */
@@ -3597,8 +3618,8 @@ code {
   border-radius: 14px;
   border: 1px solid rgba(23, 36, 38, 0.06);
   background:
-    radial-gradient(circle at 10% 30%, rgba(15, 118, 110, 0.06), transparent 50%),
-    radial-gradient(circle at 90% 70%, rgba(244, 168, 58, 0.04), transparent 50%),
+    radial-gradient(circle at 10% 30%, rgba(34, 63, 97, 0.06), transparent 50%),
+    radial-gradient(circle at 90% 70%, rgba(231, 140, 58, 0.04), transparent 50%),
     rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
 }
@@ -3799,7 +3820,7 @@ code {
   width: 3px;
   height: 16px;
   border-radius: 0 3px 3px 0;
-  background: linear-gradient(180deg, rgba(251, 191, 36, 0.8), rgba(52, 211, 153, 0.8));
+  background: linear-gradient(180deg, rgba(231, 140, 58, 0.95), rgba(231, 140, 58, 0.45));
 }
 
 /* ── Main Area ── */
@@ -3895,8 +3916,8 @@ code {
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   background:
-    radial-gradient(circle at 10% 20%, rgba(251, 191, 36, 0.06), transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(52, 211, 153, 0.04), transparent 40%),
+    radial-gradient(circle at 10% 20%, rgba(231, 140, 58, 0.07), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(34, 63, 97, 0.06), transparent 40%),
     rgba(255, 255, 255, 0.02);
 }
 

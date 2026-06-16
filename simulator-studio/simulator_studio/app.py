@@ -4,9 +4,14 @@ import copy
 import json
 import time
 from datetime import date
+from pathlib import Path
 from typing import Any
 
 import streamlit as st
+
+_ASSETS_DIR = Path(__file__).resolve().parent / "assets"
+_BRAND_LOGO = str(_ASSETS_DIR / "maasai-logo.png")
+_BRAND_ICON = str(_ASSETS_DIR / "favicon.png")
 
 try:
     from .clients import HttpError, KeycloakAdminClient, MassaiClient
@@ -24,9 +29,27 @@ except ImportError:
 
 st.set_page_config(
     page_title="MaaSAI Factory Simulator Studio",
-    page_icon="🏭",
+    page_icon=_BRAND_ICON,
     layout="wide",
 )
+
+# MaaSAI wordmark in the top-left, with the square mark as the collapsed icon.
+st.logo(_BRAND_LOGO, icon_image=_BRAND_ICON, size="large")
+
+
+# ── MaaSAI brand styling ──
+# Streamlit's config.toml handles palette but cannot load a webfont, so pull
+# Outfit from Google Fonts and apply it across the app to match the dashboard.
+_BRAND_CSS = """
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+html, body, [class*="css"], button, input, textarea, select {
+    font-family: 'Outfit', 'Segoe UI', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 { color: #223f61; }
+</style>
+"""
+st.markdown(_BRAND_CSS, unsafe_allow_html=True)
 
 
 @st.cache_resource

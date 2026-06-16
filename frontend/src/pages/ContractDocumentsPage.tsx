@@ -171,7 +171,7 @@ export function ContractDocumentsPage() {
                       type="button"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="mt-0.5 grid size-10 shrink-0 place-items-center rounded-2xl bg-teal-50 text-teal-700 ring-1 ring-teal-100">
+                        <div className="mt-0.5 grid size-10 shrink-0 place-items-center rounded-2xl bg-brand-navy/5 text-brand-navy ring-1 ring-brand-navy/15">
                           <FileText className="size-4" />
                         </div>
                         <div className="min-w-0">
@@ -180,7 +180,7 @@ export function ContractDocumentsPage() {
                               {document.name}
                             </p>
                             {document.format ? (
-                              <Badge className="border-teal-200 bg-teal-50 text-teal-700">
+                              <Badge className="border-brand-navy/20 bg-brand-navy/5 text-brand-navy">
                                 {document.format}
                               </Badge>
                             ) : null}

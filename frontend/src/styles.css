@@ -3820,7 +3820,7 @@ code {
   width: 3px;
   height: 16px;
   border-radius: 0 3px 3px 0;
-  background: linear-gradient(180deg, rgba(251, 191, 36, 0.8), rgba(52, 211, 153, 0.8));
+  background: linear-gradient(180deg, rgba(231, 140, 58, 0.95), rgba(231, 140, 58, 0.45));
 }
 
 /* ── Main Area ── */
@@ -3916,8 +3916,8 @@ code {
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   background:
-    radial-gradient(circle at 10% 20%, rgba(251, 191, 36, 0.06), transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(52, 211, 153, 0.04), transparent 40%),
+    radial-gradient(circle at 10% 20%, rgba(231, 140, 58, 0.07), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(34, 63, 97, 0.06), transparent 40%),
     rgba(255, 255, 255, 0.02);
 }
 

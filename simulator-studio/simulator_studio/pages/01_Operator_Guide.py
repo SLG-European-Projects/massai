@@ -8,6 +8,10 @@ import streamlit.components.v1 as components
 
 GUIDE_PATH = Path(__file__).resolve().parents[2] / "OPERATOR_GUIDE.md"
 
+_ASSETS_DIR = Path(__file__).resolve().parents[1] / "assets"
+_BRAND_LOGO = str(_ASSETS_DIR / "maasai-logo.png")
+_BRAND_ICON = str(_ASSETS_DIR / "favicon.png")
+
 FLOW_DIAGRAM_HTML = """
 <div style="background:#f7f7f5;border:1px solid #d7e3dc;border-radius:18px;padding:20px 20px 10px 20px;">
   <svg viewBox="0 0 1180 760" width="100%" role="img" aria-label="MaaSAI simulator studio flow diagram">
@@ -129,11 +133,14 @@ FLOW_DIAGRAM_HTML = """
 def main() -> None:
     st.set_page_config(
         page_title="Operator Guide",
-        page_icon="📘",
+        page_icon=_BRAND_ICON,
         layout="wide",
     )
+    st.logo(_BRAND_LOGO, icon_image=_BRAND_ICON, size="large")
     st.title("Operator Guide")
-    st.caption("Run the studio, create a factory, provision a contract, and stream data into MaaSAI without touching code.")
+    st.caption(
+        "Run the studio, create a factory, provision a contract, and stream data into MaaSAI without touching code."
+    )
 
     col1, col2, col3 = st.columns(3)
     col1.metric("Studio", "http://localhost:3001")
@@ -144,7 +151,9 @@ def main() -> None:
         "Use the main Studio page to create and run factories. Use this guide page as the walkthrough script during client demos."
     )
     st.markdown("## Flow Diagram")
-    st.caption("This is the end-to-end path from factory setup in the studio to buyer visibility in MaaSAI.")
+    st.caption(
+        "This is the end-to-end path from factory setup in the studio to buyer visibility in MaaSAI."
+    )
     components.html(FLOW_DIAGRAM_HTML, height=760, scrolling=False)
 
     st.markdown(GUIDE_PATH.read_text(encoding="utf-8"))

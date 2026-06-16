@@ -4,9 +4,14 @@ import copy
 import json
 import time
 from datetime import date
+from pathlib import Path
 from typing import Any
 
 import streamlit as st
+
+_ASSETS_DIR = Path(__file__).resolve().parent / "assets"
+_BRAND_LOGO = str(_ASSETS_DIR / "maasai-logo.png")
+_BRAND_ICON = str(_ASSETS_DIR / "favicon.png")
 
 try:
     from .clients import HttpError, KeycloakAdminClient, MassaiClient
@@ -24,9 +29,12 @@ except ImportError:
 
 st.set_page_config(
     page_title="MaaSAI Factory Simulator Studio",
-    page_icon="🏭",
+    page_icon=_BRAND_ICON,
     layout="wide",
 )
+
+# MaaSAI wordmark in the top-left, with the square mark as the collapsed icon.
+st.logo(_BRAND_LOGO, icon_image=_BRAND_ICON, size="large")
 
 
 # ── MaaSAI brand styling ──

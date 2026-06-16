@@ -29,6 +29,21 @@ st.set_page_config(
 )
 
 
+# ── MaaSAI brand styling ──
+# Streamlit's config.toml handles palette but cannot load a webfont, so pull
+# Outfit from Google Fonts and apply it across the app to match the dashboard.
+_BRAND_CSS = """
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+html, body, [class*="css"], button, input, textarea, select {
+    font-family: 'Outfit', 'Segoe UI', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 { color: #223f61; }
+</style>
+"""
+st.markdown(_BRAND_CSS, unsafe_allow_html=True)
+
+
 @st.cache_resource
 def get_settings() -> StudioSettings:
     return StudioSettings.from_env()

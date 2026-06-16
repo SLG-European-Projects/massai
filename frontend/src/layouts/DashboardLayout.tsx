@@ -5,7 +5,6 @@ import {
   LayoutDashboard,
   LogOut,
   Settings2,
-  Zap,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -13,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import maasaiLogo from "@/assets/maasai-logo.png";
 
 import { useAuth } from "../auth/AuthProvider";
 import { NotificationBell } from "../components/NotificationBell";
@@ -33,13 +33,12 @@ export function DashboardLayout() {
       <aside className="dash-sidebar">
         {/* Brand */}
         <div className="flex items-center gap-2.5 px-4 py-4">
-          <div className="grid size-8 place-items-center rounded-lg bg-gradient-to-br from-teal-600/20 to-amber-500/20 ring-1 ring-black/[0.06]">
-            <Zap className="size-4 text-teal-700" />
-          </div>
-          <div>
-            <p className="text-sm font-semibold tracking-tight text-stone-800">MASSAI</p>
-            <p className="text-xs uppercase tracking-[0.18em] text-stone-400">Consumer</p>
-          </div>
+          <img
+            alt="MaaSAI"
+            className="h-7 w-auto"
+            src={maasaiLogo}
+          />
+          <span className="text-xs uppercase tracking-[0.18em] text-stone-400">Consumer</span>
         </div>
 
         <Separator className="opacity-50" />

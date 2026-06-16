@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
 import { useAuth } from "../auth/AuthProvider";
+import maasaiLogo from "@/assets/maasai-logo.png";
 
 type ProtectedRouteProps = {
   requiredRole?: string;
@@ -20,6 +21,7 @@ export function ProtectedRoute({ requiredRole }: ProtectedRouteProps) {
     return (
       <section className="app-shell status-shell">
         <div className="status-card">
+          <img alt="MaaSAI" className="status-logo" src={maasaiLogo} />
           <span className="eyebrow">Authentication</span>
           <h1>Preparing your session</h1>
           <p>Checking your Keycloak session and refreshing access if needed.</p>
@@ -32,6 +34,7 @@ export function ProtectedRoute({ requiredRole }: ProtectedRouteProps) {
     return (
       <section className="app-shell status-shell">
         <div className="status-card">
+          <img alt="MaaSAI" className="status-logo" src={maasaiLogo} />
           <span className="eyebrow">Authentication Error</span>
           <h1>Keycloak did not initialize cleanly</h1>
           <p>{error}</p>
@@ -47,6 +50,7 @@ export function ProtectedRoute({ requiredRole }: ProtectedRouteProps) {
     return (
       <section className="app-shell status-shell">
         <div className="status-card">
+          <img alt="MaaSAI" className="status-logo" src={maasaiLogo} />
           <span className="eyebrow">Authentication</span>
           <h1>Redirecting to Keycloak</h1>
           <p>Your session is not active yet. We&apos;re sending you to the login flow now.</p>
@@ -59,6 +63,7 @@ export function ProtectedRoute({ requiredRole }: ProtectedRouteProps) {
     return (
       <section className="app-shell status-shell">
         <div className="status-card">
+          <img alt="MaaSAI" className="status-logo" src={maasaiLogo} />
           <span className="eyebrow">Access Restricted</span>
           <h1>This route is limited to {requiredRole} users</h1>
           <p>Your current roles are {user?.roles.join(", ") || "none"}.</p>

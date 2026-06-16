@@ -79,7 +79,7 @@ export function DocumentViewerSheet({
                   Document viewer
                 </Badge>
                 {document.format ? (
-                  <Badge className="border-teal-200 bg-teal-50 text-teal-700">
+                  <Badge className="border-brand-navy/20 bg-brand-navy/5 text-brand-navy">
                     {document.format}
                   </Badge>
                 ) : null}
@@ -143,7 +143,7 @@ export function DocumentViewerSheet({
                           </div>
                         </div>
                       ) : (
-                        <div className="grid min-h-0 flex-1 place-items-center overflow-auto bg-[radial-gradient(circle_at_top,rgba(15,118,110,0.08),transparent_38%),linear-gradient(180deg,rgba(250,250,249,0.9),rgba(244,244,245,0.8))] p-6">
+                        <div className="grid min-h-0 flex-1 place-items-center overflow-auto bg-[radial-gradient(circle_at_top,rgba(34,63,97,0.08),transparent_38%),linear-gradient(180deg,rgba(250,250,249,0.9),rgba(244,244,245,0.8))] p-6">
                           <img
                             alt={document.name}
                             className="max-h-full max-w-full rounded-2xl border border-stone-200 object-contain shadow-[0_16px_32px_rgba(23,36,38,0.12)]"
